@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuvaan's 9th Birthday Invitation</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            font-family: 'Comic Sans MS', 'Arial', sans-serif; /* Use 'Comic Sans MS' or any other playful font */
+            background-color: #87CEEB; /* Light blue background color */
+            background-image: url('https://images.pexels.com/photos/1275413/pexels-photo-1275413.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'); /* Replace 'your_image_url.jpg' with your image URL */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            transition: background-image 0.5s ease-in-out;
+        }
+
+        #invitation-parents {
+            text-align: center;
+            color: gold;
+            font-size: 32px; /* Increase the font size */
+            padding: 20px;
+            position: relative;
+            z-index: 1;
+        }
+
+        #invitation-details {
+            text-align: center;
+            color: gold;
+            font-size: 32px; /* Increase the font size */
+            padding: 20px;
+            margin-bottom: 50px; /* Add margin to push details to the bottom */
+            position: relative;
+            z-index: 1;
+        }
+
+        #confetti-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 10px;
+            height: 10px;
+            background-color: gold;
+            border-radius: 50%;
+            opacity: 0.8;
+            animation: fall 3s linear infinite;
+        }
+
+        @keyframes fall {
+            to {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div id="invitation-parents">
+    <p>Dear friends,</p>
+    <p>You are cordially invited to celebrate Yuvaan's 9th Birthday!</p>
+    <p>Join us for a day of fun, laughter, and joy as we mark this special occasion.</p>
+</div>
+
+<div id="invitation-details">
+    <div id="moving-text">
+        <p style="font-size: 36px;">Date: 24/11/23 | Time: 4 PM</p>
+        <p style="font-size: 36px;">Venue: C16 - GF, Ashoka Enclave 2, Sec 37, Faridabad</p>
+    </div>
+</div>
+
+<div id="confetti-container"></div>
+
+<script>
+    // JavaScript to dynamically create confetti elements
+    function createConfetti() {
+        const confettiContainer = document.getElementById('confetti-container');
+        const confetti = document.createElement('div');
+        confetti.className = 'confetti';
+        confetti.style.left = Math.random() * 100 + 'vw';
+        confettiContainer.appendChild(confetti);
+    }
+
+    // Create confetti at intervals
+    setInterval(createConfetti, 500);
+</script>
+
+</body>
+</html>
